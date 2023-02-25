@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block titulo %} Agregar planta {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Ingresar articulo
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos de la planta y maceta</h4>
+        {% include 'plantas/form.html' %}
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block titulo %} Lista de plantas {% endblock %}
+{% block contenido %}  
+<a name = "" id="" class="bi bi-plus-circle-dotted" href=" {% url 'crear_planta_def_path' %}"></a>
+<div class="row row-cols-2 row-cols-md-3 g-4">
+    {% for registros in plantas_consulta_vr %}
+    <div class="col">
+        <div class="card" style="width: 25rem;">
+            <img src="{{registros.imagen.url }}" class="card-img-top"  height="450px" width="500px" />
+            <div class="card-body">
+                <h6 class="card-title">{{registros.id}}</h6>
+                <h5 class="card-title">{{registros.nombre}}</h5>
+                <p class="card-text">{{registros.descripcion}}</p>
+                <a name="" id="" class="btn btn-info" href="{% url 'editar_planta_def_path' registros.id %}" role="button">Editar</a>
+                <a name="" id="" class="btn btn-danger" href = "{% url 'eliminar_planta_def_path' registros.id %}" role="button">Borrar</a>
+            </div>
+        </div>
+    </div>                
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+}
